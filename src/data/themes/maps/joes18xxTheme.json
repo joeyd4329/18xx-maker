@@ -1,0 +1,29 @@
+{
+  "name": "joes18xxColors",
+  "colors": {
+    "plain": "#ffaa00",
+    "yellow": "#fffc00",
+    "green": "#01fa00",
+    "brown": "#965229",
+    "gray": "#bcbdc0",
+
+    "offboard": "#fe6464",
+    "mountain": "#ee874b",
+    "water": "#0042aa"",
+    "land": "#ffaa00",
+    "river": "#bbd9e6",
+
+    "white": "#fff",
+    "black": "#000",
+
+    "orange": "#ffa500",
+    "red": "#fe6464",
+
+    "track": "#000",
+    "border": "#fff",
+    "town": "#000",
+    "centerTown": "#000",
+    "city": "#fff",
+    "halt": "#666"
+  }
+}
