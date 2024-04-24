@@ -84,15 +84,19 @@ const Cards = ({ hidePrivates, hideShares, hideTrains, hideNumbers }) => {
     ),
     trains
   );
+  let numberColors = game.number_cards || [game.info.background]
   let numberNodes = map(
-    n => (
-      <Number
-        number={n}
-        background={game.info.background}
-        key={`number=${n}`}
-      />
+    color => map(
+      n => (
+        <Number
+          number={n}
+          background={color}
+          key={`number=${n}`}
+        />
+      ),
+      numbers
     ),
-    numbers
+    numberColors
   );
 
   let cardNodes = [...privateNodes, ...shareNodes, ...trainNodes, ...numberNodes];
@@ -213,6 +217,39 @@ const Cards = ({ hidePrivates, hideShares, hideTrains, hideNumbers }) => {
     height: calc(0.6875in + ${data.css.bleed});
 }
 `;
+
+  if (config.privates.style === "big") {
+    css += `
+.private__description {
+  padding: 0 35% 0 0.125in;
+}
+
+.private__players {
+  bottom: 0.16in;
+}
+
+.private__hex,
+.private__tile,
+.private__icon,
+.private__company {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.4in 0.125in 1em 0.5em;
+  width: 25%;
+  height: 45%;
+  float: none;
+}
+
+.private__hex svg,
+.private__tile svg,
+.private__icon svg,
+.private__company svg {
+  width: 100%;
+  height: 100%;
+}
+`;
+  }
 
   return (
     <div>
